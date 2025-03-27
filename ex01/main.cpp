@@ -6,7 +6,7 @@
 /*   By: misaac-c <misaac-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 12:03:20 by misaac-c          #+#    #+#             */
-/*   Updated: 2025/03/27 12:24:56 by misaac-c         ###   ########.fr       */
+/*   Updated: 2025/03/27 13:44:28 by misaac-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,9 +99,10 @@ void Add_data(Contact &user, void (Contact::*setter)(std::string), std::string m
 		std::getline(std::cin, data);
 	}
 	(user.*setter)(data);
+	return ;
 }
 
-void Add_contact(Contact *user)
+void AddContact(Contact *user)
 {
 
 	Add_data(*user, &Contact::Set_Name, "Name : ");
@@ -109,15 +110,56 @@ void Add_contact(Contact *user)
 	Add_data(*user, &Contact::Set_Nickname, "Nickname : ");
 	Add_data(*user, &Contact::Set_PhoneNum, "Phone number : ");
 	Add_data(*user, &Contact::Set_Secret, "Darkest secret : ");
-	
-	/* DONE 
-	std :: cout << "Contact_name -> " << user.Get_Name() << "\n";
-	std :: cout << "Contact_last_name -> " << user.Get_LastName() << "\n";
-	std :: cout << "Contact_Nickname -> " << user.Get_Nickname() << "\n";
-	std :: cout << "Contact_Phone_Num -> " << user.Get_PhoneNum() << "\n";
-	std :: cout << "Contact_Secret -> " << user.Get_Secret() << "\n";
-	*/
-	return;	
+	return ;
+}
+
+void DisplayMaximum(std::string info)
+{
+	int i = 0;
+
+	std::cout << "|";
+	while(info[i] && i < 9)
+	{
+		std::cout << info[i];
+		i++;
+	}
+	if(info[i] && i <= 9)
+		std::cout << ".";
+	else if(!info[i] && i <= 9)
+	{
+		while (i++ <= 9)
+			std::cout << " ";
+	}
+}
+
+void DisplayContact(PhoneBook *Book, int id)
+{
+	std::cout << "|id        ";
+	DisplayMaximum(Book->m_user[id].Get_Name());
+	DisplayMaximum(Book->m_user[id].Get_LastName());
+	DisplayMaximum(Book->m_user[id].Get_Nickname());
+	std::cout << "|\n";
+}
+
+void SearchContact(PhoneBook *Book)
+{
+	int id = 0;
+	int count = 0;
+
+	std::cout << "--------------------------------------------\n";
+	std::cout << "|id       | Name     |Last Name |Nick Name |" << "\n--------------------------------------------\n";
+	while (id < 7)
+	{
+		if(Book->m_user[id].Get_Name() == "");
+		else
+		{
+			DisplayContact(Book, id);
+			
+		}
+		id++;
+	}
+	std :: cout << "--------------------------------------------\n";
+	return ;
 }
 
 int main(void)
@@ -132,15 +174,20 @@ int main(void)
 	std :: cout << "[Welcome message]\n";
 	while(str != "EXIT")
 	{
+		if (id >= 8)
+			id = 0;
 		std::getline(std::cin, str);
 		if(str == "ADD")
 		{
 			std :: cout << "[Adding contact scenario]\n";
-			Add_contact(&Book.m_user[id]);
+			AddContact(&Book.m_user[id]);
 			id++;
 		}
 		else if(str == "SEARCH")
+		{
 			std :: cout << "[Search contact scenario]\n";
+			SearchContact(&Book);
+		}
 	}
 	std :: cout << "[Goodbye message]\n";	
 	return(0);
