@@ -6,7 +6,7 @@
 /*   By: misaac-c <misaac-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 12:03:20 by misaac-c          #+#    #+#             */
-/*   Updated: 2025/03/26 13:53:46 by misaac-c         ###   ########.fr       */
+/*   Updated: 2025/03/27 12:24:56 by misaac-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,74 +78,56 @@ public:
 
 
 class PhoneBook
-{ 
-	PhoneBook();
+{
+public:
+	PhoneBook(){};
+	
 public: 
-	//Contact[8];
+	Contact m_user[8];
 
 };
 
 /* Build des class */
 
-void Add_data(Contact user, std::string data)
+void Add_data(Contact &user, void (Contact::*setter)(std::string), std::string message)
 {
-	user.Set_Name(data);
-	std :: cout << "Object data -> " << user.Get_Name() << "\n";
-}
-
-void Add_contact()
-{
-	Contact user;
 	std::string data;
-	while (data.length() == 0)
+	
+	while(data.length() == 0)
 	{
-		std :: cout << "Name: ";
+		std :: cout << message;
 		std::getline(std::cin, data);
 	}
-	return;
+	(user.*setter)(data);
+}
+
+void Add_contact(Contact *user)
+{
+
+	Add_data(*user, &Contact::Set_Name, "Name : ");
+	Add_data(*user, &Contact::Set_LastName, "Last Name : ");
+	Add_data(*user, &Contact::Set_Nickname, "Nickname : ");
+	Add_data(*user, &Contact::Set_PhoneNum, "Phone number : ");
+	Add_data(*user, &Contact::Set_Secret, "Darkest secret : ");
 	
-	for(int i = 0; i < 5; i++)
-	{
-		if (i == 0)
-		{
-			std :: cout << "Name : ";
-			std::getline(std::cin, data);
-			Add_data(user, data);
-		}
-		else if (i == 1)
-		{
-			std :: cout << "Last Name : ";
-			std::getline(std::cin, data);
-			user.Set_LastName(data);
-			std :: cout << "Object data -> " << user.Get_LastName() << "\n";
-		}
-		else if (i == 2)
-		{
-			std :: cout << "Nickname : ";
-			std::getline(std::cin, data);
-			user.Set_Nickname(data);
-			std :: cout << "Object data -> " << user.Get_Nickname() << "\n";
-		}
-		else if (i == 3)
-		{
-			std :: cout << "Phone num : ";
-			std::getline(std::cin, data);
-			user.Set_PhoneNum(data);
-			std :: cout << "Object data -> " << user.Get_PhoneNum() << "\n";
-		}
-		else if (i == 4)
-		{
-			std :: cout << "Darkest secret : ";
-			std::getline(std::cin, data);
-			user.Set_Secret(data);
-			std :: cout << "Object data -> " << user.Get_Secret() << "\n";
-		}
-	}
-	
+	/* DONE 
+	std :: cout << "Contact_name -> " << user.Get_Name() << "\n";
+	std :: cout << "Contact_last_name -> " << user.Get_LastName() << "\n";
+	std :: cout << "Contact_Nickname -> " << user.Get_Nickname() << "\n";
+	std :: cout << "Contact_Phone_Num -> " << user.Get_PhoneNum() << "\n";
+	std :: cout << "Contact_Secret -> " << user.Get_Secret() << "\n";
+	*/
+	return;	
 }
 
 int main(void)
 {
+	// Theorie, les  id vont de 0 a 7 pour un total de 8 objet user stocker dans book. 
+	// Faire Book.m_user[id] -> id n'est incrementer que dans le cas ou l'on add.
+	// Donner Book.m_user[id] en parametre pour changer les donnes de cette objet. 
+	PhoneBook Book;
+	int id = 0;
+
 	std::string str;
 	std :: cout << "[Welcome message]\n";
 	while(str != "EXIT")
@@ -154,7 +136,8 @@ int main(void)
 		if(str == "ADD")
 		{
 			std :: cout << "[Adding contact scenario]\n";
-			Add_contact();
+			Add_contact(&Book.m_user[id]);
+			id++;
 		}
 		else if(str == "SEARCH")
 			std :: cout << "[Search contact scenario]\n";
