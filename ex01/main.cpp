@@ -6,7 +6,7 @@
 /*   By: misaac-c <misaac-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 12:03:20 by misaac-c          #+#    #+#             */
-/*   Updated: 2025/03/27 13:44:28 by misaac-c         ###   ########.fr       */
+/*   Updated: 2025/03/28 12:45:58 by misaac-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,12 +104,13 @@ void Add_data(Contact &user, void (Contact::*setter)(std::string), std::string m
 
 void AddContact(Contact *user)
 {
-
+	std::cout << "\n-- Please fill the information of the new contact ! --\n";
 	Add_data(*user, &Contact::Set_Name, "Name : ");
 	Add_data(*user, &Contact::Set_LastName, "Last Name : ");
 	Add_data(*user, &Contact::Set_Nickname, "Nickname : ");
 	Add_data(*user, &Contact::Set_PhoneNum, "Phone number : ");
 	Add_data(*user, &Contact::Set_Secret, "Darkest secret : ");
+	std::cout << "-- Contact correctly added. --\n\n";
 	return ;
 }
 
@@ -134,61 +135,83 @@ void DisplayMaximum(std::string info)
 
 void DisplayContact(PhoneBook *Book, int id)
 {
-	std::cout << "|id        ";
+	std::cout << "|id     " << id << "  "; 
 	DisplayMaximum(Book->m_user[id].Get_Name());
 	DisplayMaximum(Book->m_user[id].Get_LastName());
 	DisplayMaximum(Book->m_user[id].Get_Nickname());
 	std::cout << "|\n";
 }
 
+void FullDisplay(PhoneBook *Book, int id)
+{
+	std::cout << "------------------------------------\n";
+	std::cout << "Name : " << Book->m_user[id].Get_Name() << "\n";
+	std::cout << "Last Name : " << Book->m_user[id].Get_LastName() << "\n";
+	std::cout << "Nickname : " << Book->m_user[id].Get_Nickname() << "\n";
+	std::cout << "Phone number : " << Book->m_user[id].Get_PhoneNum() << "\n";
+	std::cout << "Darkest secret : " << Book->m_user[id].Get_Secret() << "\n";
+	std::cout << "------------------------------------\n";
+}
+
 void SearchContact(PhoneBook *Book)
 {
+	int flag = 0;
 	int id = 0;
 	int count = 0;
+	std::string str = "";
 
 	std::cout << "--------------------------------------------\n";
-	std::cout << "|id       | Name     |Last Name |Nick Name |" << "\n--------------------------------------------\n";
-	while (id < 7)
+	std::cout << "|id        |Name      |Last Name |Nick Name |" << "\n--------------------------------------------\n";
+	while (id < 8)
 	{
-		if(Book->m_user[id].Get_Name() == "");
+		if(Book->m_user[id].Get_Name() == "")
+			flag++;
 		else
-		{
 			DisplayContact(Book, id);
-			
-		}
 		id++;
 	}
-	std :: cout << "--------------------------------------------\n";
+	std::cout << "--------------------------------------------\n";
+	int ref = 7 - flag;
+	int maximum = ref + '0';
+	if (maximum < '0')
+	{
+		std::cout << "The phone book is empty ! \n"; 
+		return;
+	}
+	while (str == "" || str[0] < '0' || str[0] > maximum || str.size() > 1)
+	{
+		std::cout << "Select an ID : "; 
+		std::getline(std::cin, str);
+	}
+	id = stoi(str);
+		FullDisplay(Book, id);
 	return ;
 }
 
 int main(void)
 {
-	// Theorie, les  id vont de 0 a 7 pour un total de 8 objet user stocker dans book. 
-	// Faire Book.m_user[id] -> id n'est incrementer que dans le cas ou l'on add.
-	// Donner Book.m_user[id] en parametre pour changer les donnes de cette objet. 
 	PhoneBook Book;
 	int id = 0;
 
 	std::string str;
-	std :: cout << "[Welcome message]\n";
+	std :: cout << "Welcome to this awesome phone book !\nADD -> use that command to add a contact in the phone book.\nSEARCH -> use that command to see all the contact register in this phone book.\nEXIT -> leave the program.\n[DISCLAIMER] : When the program stop the phone book loose all his data.\n\n";
 	while(str != "EXIT")
 	{
 		if (id >= 8)
+		{
+			std::cout << "A maximum of 8 contact are accepted.\nStarting from now, a new user will delete the data of the previous ones.\n";
 			id = 0;
+		}
+		std::cout << "EXIT, ADD and SEARCH commands only accepted : ";
 		std::getline(std::cin, str);
 		if(str == "ADD")
 		{
-			std :: cout << "[Adding contact scenario]\n";
 			AddContact(&Book.m_user[id]);
 			id++;
 		}
 		else if(str == "SEARCH")
-		{
-			std :: cout << "[Search contact scenario]\n";
 			SearchContact(&Book);
-		}
 	}
-	std :: cout << "[Goodbye message]\n";	
+	std :: cout << "\nAll the data has been deleted :/\nThank you for using this phone book !\n";	
 	return(0);
 }
