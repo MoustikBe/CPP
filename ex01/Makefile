@@ -1,25 +1,30 @@
-NAME    = megaphone
+NAME    = PhoneBook
 C+	    = c++
 CFLAG   = -Wall -Werror -Wextra
 RM      = rm -rf
-SOURCES = megaphone.cpp
-OBJECTS = $(SOURCES:%.cpp=%.o)
+OBJDIR  = obj
+SOURCES = src/main.cpp \
+		  src/Add.cpp \
+		  src/Search.cpp \
+		  src/PhoneBook.cpp
+OBJECTS = $(SOURCES:%.cpp=$(OBJDIR)/%.o)
 
-%.o: %.c 
+$(OBJDIR)/%.o: %.cpp
+	@mkdir -p $(dir $@)
 	@$(C+) $(CFLAG) -c $< -o $@
-	@echo "Objects compiled"
 
 $(NAME): $(OBJECTS)
 	@$(C+) $(OBJECTS) -o $(NAME)
-	@echo "Project compiled -> ./megaphone [text]"
+	@echo "\033[0;32mProject compiled -> ./PhoneBook"
 
 clean : 
-	@$(RM) $(OBJECTS)
-	@echo "Objects removed"
+	@$(RM) -r $(OBJDIR)  > /dev/null 2>&1
+	@echo "\033[0;31mObjects removed"
 
 fclean : clean
+	@$(RM) -r $(OBJDIR)  > /dev/null 2>&1
 	@$(RM) $(NAME)
-	@echo "Project cleaned"
+	@echo "\033[0;31mProject cleaned"
 
 all : $(NAME)
 
