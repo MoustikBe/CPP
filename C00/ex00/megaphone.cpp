@@ -6,7 +6,7 @@
 /*   By: misaac-c <misaac-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 13:27:27 by misaac-c          #+#    #+#             */
-/*   Updated: 2025/01/31 13:42:26 by misaac-c         ###   ########.fr       */
+/*   Updated: 2025/04/01 09:38:39 by misaac-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,26 +22,16 @@ int main(int argc, char **argv)
  
 	i = 0;
 	if (argc == 1)
-		std :: cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
-	i++;
-	while (argv[i])
+		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
+	else
 	{
-		j = 0;
-		while (argv[i][j])
+		for(i=1; i < argc; i++)
 		{
-			if (argv[i][j] == '"')
-				j++;
-			else if (argv[i][j] > 96 && argv[i][j] < 123)
-			{
-				new_char = argv[i][j] - 32;
-				std :: cout << new_char;
-				j++;
-			}
-			else
-				std :: cout << argv[i][j++];
+			std::string arg = argv[i];
+			for(char &c : arg)
+				std::cout << (char)std::toupper(c);
 		}
-		i++;
 	}
-	std :: cout << '\n';
+	std::cout << '\n';
 	return(0);
 }

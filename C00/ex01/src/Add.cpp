@@ -6,7 +6,7 @@
 /*   By: misaac-c <misaac-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 13:13:23 by misaac-c          #+#    #+#             */
-/*   Updated: 2025/03/31 13:15:34 by misaac-c         ###   ########.fr       */
+/*   Updated: 2025/04/01 09:38:54 by misaac-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void Add_data(Contact &user, void (Contact::*setter)(std::string), std::string m
 	
 	while(data.length() == 0)
 	{
-		std :: cout << message;
+		std::cout << message;
 		std::getline(std::cin, data);
 	}
 	(user.*setter)(data);
