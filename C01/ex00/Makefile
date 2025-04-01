@@ -1,9 +1,12 @@
-NAME    = Bank
+NAME    = Zombie
 C+	    = c++
 CFLAG   = -Wall -Werror -Wextra
 RM      = rm -rf
 OBJDIR  = obj
-SOURCES =
+SOURCES = src/main.cpp \
+		  src/newZombie.cpp \
+		  src/randomChump.cpp \
+		  src/Zombie.cpp
 
 OBJECTS = $(SOURCES:%.cpp=$(OBJDIR)/%.o)
 
@@ -13,7 +16,7 @@ $(OBJDIR)/%.o: %.cpp
 
 $(NAME): $(OBJECTS)
 	@$(C+) $(OBJECTS) -o $(NAME)
-	@echo "\033[0;32mProject compiled -> ./Bank"
+	@echo "\033[0;32mProject compiled -> ./Zombie"
 
 clean : 
 	@$(RM) -r $(OBJDIR)  > /dev/null 2>&1
