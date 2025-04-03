@@ -4,8 +4,7 @@ CFLAG   = -Wall -Werror -Wextra
 RM      = rm -rf
 OBJDIR  = obj
 SOURCES = src/main.cpp \
-		  src/newZombie.cpp \
-		  src/randomChump.cpp \
+		  src/zombieHorde.cpp \
 		  src/Zombie.cpp
 
 OBJECTS = $(SOURCES:%.cpp=$(OBJDIR)/%.o)
