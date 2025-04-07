@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: misaac-c <misaac-c@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: misaac-c <misaac-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 11:57:13 by misaac-c          #+#    #+#             */
-/*   Updated: 2025/04/04 11:57:35 by misaac-c         ###   ########.fr       */
+/*   Updated: 2025/04/07 13:10:29 by misaac-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanA.hpp"
 
-HumanA::HumanA(std::string name, Weapon def_weapon)
+void    HumanA::attack()
 {
-	
+    std::cout << _name << " attacks with their "<< _weapon.getType() << "\n";
 }

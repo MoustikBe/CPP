@@ -3,12 +3,9 @@ C+	    = c++
 CFLAG   = -Wall -Werror -Wextra
 RM      = rm -rf
 OBJDIR  = obj
-SOURCES = src/main.cpp \
-		  src/HumanA.hpp \
+SOURCES = src/main.cpp  \
 		  src/HumanA.cpp \
-		  src/HumanB.hpp \
 		  src/HumanB.cpp \
-		  src/Weapon.hpp \
 		  src/Weapon.cpp 	  
 
 OBJECTS = $(SOURCES:%.cpp=$(OBJDIR)/%.o)

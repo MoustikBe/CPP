@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: misaac-c <misaac-c@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: misaac-c <misaac-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 11:50:04 by misaac-c          #+#    #+#             */
-/*   Updated: 2025/04/04 11:51:18 by misaac-c         ###   ########.fr       */
+/*   Updated: 2025/04/07 13:28:38 by misaac-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,15 @@ int main()
 		Weapon club = Weapon("crude spiked club");
 		HumanA bob("Bob", club);
 		bob.attack();
-		club.setType("some other type of club");
+		club.setType("guns");
 		bob.attack();
 	}
 	{
-		Weapon club = Weapon("crude spiked club");
+		Weapon club = Weapon("apples");
 		HumanB jim("Jim");
 		jim.setWeapon(club);
 		jim.attack();
-		club.setType("some other type of club");
+		club.setType("swords");
 		jim.attack();
 	}
 	return (0);
