@@ -1,4 +1,4 @@
-NAME    = Zombie
+NAME    = ./FigthClub
 C+	    = c++
 CFLAG   = -Wall -Werror -Wextra
 RM      = rm -rf
@@ -16,7 +16,7 @@ $(OBJDIR)/%.o: %.cpp
 
 $(NAME): $(OBJECTS)
 	@$(C+) $(OBJECTS) -o $(NAME)
-	@echo "\033[0;32mProject compiled -> ./Zombie"
+	@echo "\033[0;32mProject compiled -> ./FigthClub"
 
 clean : 
 	@$(RM) -r $(OBJDIR)  > /dev/null 2>&1

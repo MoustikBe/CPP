@@ -1,9 +1,9 @@
-NAME    = Zombie
+NAME    = SubFile
 C+	    = c++
 CFLAG   = -Wall -Werror -Wextra
 RM      = rm -rf
 OBJDIR  = obj
-SOURCES = 	  
+SOURCES = src/main.cpp 
 
 OBJECTS = $(SOURCES:%.cpp=$(OBJDIR)/%.o)
 
@@ -13,7 +13,7 @@ $(OBJDIR)/%.o: %.cpp
 
 $(NAME): $(OBJECTS)
 	@$(C+) $(OBJECTS) -o $(NAME)
-	@echo "\033[0;32mProject compiled -> ./Zombie"
+	@echo "\033[0;32mProject compiled -> ./SubFile [Source_file] [Word_to_replace] [New_word]"
 
 clean : 
 	@$(RM) -r $(OBJDIR)  > /dev/null 2>&1
