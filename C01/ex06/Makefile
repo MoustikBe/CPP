@@ -1,4 +1,4 @@
-NAME    = Harl
+NAME    = harlFilter
 C+	    = c++
 CFLAG   = -Wall -Werror -Wextra
 RM      = rm -rf
