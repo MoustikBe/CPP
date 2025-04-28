@@ -1,10 +1,11 @@
-NAME    = ClapTrap
+NAME    = ScavTrap
 C+	    = c++
 CFLAG   = -Wall -Werror -Wextra
 RM      = rm -rf
 OBJDIR  = obj
 SOURCES = src/main.cpp \
-		  src/ClapTrap.cpp 
+		  src/ClapTrap.cpp \
+		  src/ScavTrap.cpp 
 
 
 OBJECTS = $(SOURCES:%.cpp=$(OBJDIR)/%.o)
@@ -15,7 +16,7 @@ $(OBJDIR)/%.o: %.cpp
 
 $(NAME): $(OBJECTS)
 	@$(C+) $(OBJECTS) -o $(NAME)
-	@echo "\033[0;32mProject compiled -> ./Canon"
+	@echo "\033[0;32mProject compiled -> ./ScavTrap"
 
 clean : 
 	@$(RM) -r $(OBJDIR)  > /dev/null 2>&1
