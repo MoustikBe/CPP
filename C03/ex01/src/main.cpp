@@ -6,19 +6,14 @@
 /*   By: misaac-c <misaac-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 11:05:27 by misaac-c          #+#    #+#             */
-/*   Updated: 2025/04/25 13:43:45 by misaac-c         ###   ########.fr       */
+/*   Updated: 2025/04/25 12:45:09 by misaac-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
 
 int main()
 {
-	ScavTrap New_Bot("Mehnon");
-
-	New_Bot.guardGate();
-	/*
 	std::cout << "### TESTING CLAPTRAP ###\n" << std::endl;
 	{
 		std::cout << "\033[34mConstructing\033[0m" << std::endl;
@@ -37,6 +32,5 @@ int main()
 		b.beRepaired(3);
 		std::cout << "\033[34mDeconstructing\033[0m" << std::endl;
 	}
-	*/
 	return (0);
 }

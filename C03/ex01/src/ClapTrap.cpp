@@ -30,6 +30,25 @@ ClapTrap::ClapTrap(std::string name)
     std::cout << "Clap trap named " << _Name << " builted\n";
 }
 
+ClapTrap::ClapTrap(const ClapTrap &other) : 
+_Name(other._Name), _HitPoints(other._HitPoints), _Stamina(other._Stamina), _AttackDamage(other._AttackDamage)
+{
+    std::cout << "Clap Trap obecjt " << _Name << " copied\n";
+}
+
+ClapTrap& ClapTrap::operator=(const ClapTrap &other)
+{
+    if(this != &other)
+    {
+        _Name = other._Name;
+        _HitPoints = other._HitPoints;
+        _Stamina = other._Stamina;
+        _AttackDamage = other._AttackDamage;
+    }
+    std::cout << "Clap trap assigned\n";
+    return(*this);
+}
+
 ClapTrap::~ClapTrap()
 {
     std::cout << "Destructor called\n";
