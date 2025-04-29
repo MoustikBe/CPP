@@ -6,28 +6,26 @@
 /*   By: misaac-c <misaac-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 13:01:43 by misaac-c          #+#    #+#             */
-/*   Updated: 2025/04/28 13:37:58 by misaac-c         ###   ########.fr       */
+/*   Updated: 2025/04/29 11:56:02 by misaac-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
+#include "../header/ClapTrap.hpp"
 
 FragTrap::FragTrap() : ClapTrap()
 {
     _HitPoints = 100;
     _Stamina = 100;
-    _AttackDamage = 30;
-    std::cout << "Frag trap " << _Name << " has been created\n";
+    _AttackDamage = 30; 
+    std::cout << "Frag trap named " << _Name << " builted (default constructor)\n";
 }
 
-FragTrap::FragTrap(std::string name) : ClapTrap(name)
+FragTrap::FragTrap(const std::string& name) : ClapTrap(name)
 {
     _HitPoints = 100;
     _Stamina = 100;
     _AttackDamage = 30;
-    std::cout << "Frag trap " << _Name << " has been created\n";
+    std::cout << "Frag trap " << _Name << " builted\n";
 }
 
 FragTrap::FragTrap(const FragTrap &other) : ClapTrap(other)

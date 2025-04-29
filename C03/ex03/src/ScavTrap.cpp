@@ -6,28 +6,28 @@
 /*   By: misaac-c <misaac-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 13:01:47 by misaac-c          #+#    #+#             */
-/*   Updated: 2025/04/28 13:01:50 by misaac-c         ###   ########.fr       */
+/*   Updated: 2025/04/29 11:58:24 by misaac-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "../header/ClapTrap.hpp"
 
 ScavTrap::ScavTrap() : ClapTrap()
 {
-    _Name = "No_name_:/";
     _HitPoints = 100;
     _Stamina = 50;
-    _AttackDamage = 20;
-    std::cout << "Scav trap named " << _Name << " has been created\n";
+    if(_AttackDamage != 30)
+        _AttackDamage = 20;
+    std::cout << "Scav trap named " << _Name << " builted (default constructor)\n";
 }
 
-ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
+ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name)
 {
-    _Name = name;
     _HitPoints = 100;
     _Stamina = 50;
-    _AttackDamage = 20;
-    std::cout << "Scav trap named " << _Name << " has been created\n";
+    if(_AttackDamage != 30)
+        _AttackDamage = 20;
+    std::cout << "Scav trap named " << _Name << " builted\n";
 }
 
 ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap(other)

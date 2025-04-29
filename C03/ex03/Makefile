@@ -1,13 +1,13 @@
-NAME    = FragTrap
+NAME    = DiamondTrap
 C+	    = c++
-CFLAG   = -Wall -Werror -Wextra
+CFLAG   = -Wall -Werror -Wextra -g3
 RM      = rm -rf
 OBJDIR  = obj
 SOURCES = src/main.cpp \
 		  src/ClapTrap.cpp \
 		  src/ScavTrap.cpp \
-		  src/FragTrap.cpp
-
+		  src/FragTrap.cpp \
+		  src/DiamondTrap.cpp
 
 OBJECTS = $(SOURCES:%.cpp=$(OBJDIR)/%.o)
 
@@ -17,7 +17,7 @@ $(OBJDIR)/%.o: %.cpp
 
 $(NAME): $(OBJECTS)
 	@$(C+) $(OBJECTS) -o $(NAME)
-	@echo "\033[0;32mProject compiled -> ./FragTrap"
+	@echo "\033[0;32mProject compiled -> ./DiamondTrap"
 
 clean : 
 	@$(RM) -r $(OBJDIR)  > /dev/null 2>&1

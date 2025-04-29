@@ -3,6 +3,9 @@
 
 #include <iostream>
 #include <aio.h>
+#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
+#include "DiamondTrap.hpp"
 
 class ClapTrap
 {
@@ -13,7 +16,7 @@ protected:
     int      _AttackDamage;
 public:
     ClapTrap();
-    ClapTrap(std::string name);
+    ClapTrap(const std::string& name);
     ClapTrap(const ClapTrap &other);
     ClapTrap& operator=(const ClapTrap &other);
     ~ClapTrap();

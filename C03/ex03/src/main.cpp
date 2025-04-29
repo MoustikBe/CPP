@@ -6,16 +6,14 @@
 /*   By: misaac-c <misaac-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 11:05:27 by misaac-c          #+#    #+#             */
-/*   Updated: 2025/04/28 13:39:42 by misaac-c         ###   ########.fr       */
+/*   Updated: 2025/04/29 11:58:20 by misaac-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
+#include "../header/ClapTrap.hpp"
 
 int main()
-{
+{/*
 	ClapTrap a;
 	ClapTrap b("bot_B");
 	std::cout << "------------\n";
@@ -47,6 +45,17 @@ int main()
 	f.beRepaired(2);
 	e.takeDamage(1);
 	f.takeDamage(2);
+	std::cout << "------------\n";
+	*/
+	DiamondTrap g;
+	DiamondTrap h("bot_H");
+	std::cout << "------------\n";
+	g.attack("a keyboard");
+	h.attack("a mouse");
+	h.beRepaired(2);
+	h.takeDamage(2);
+	h.whoAmI();
+	g.whoAmI();
 	std::cout << "------------\n";
 	return (0);
 }

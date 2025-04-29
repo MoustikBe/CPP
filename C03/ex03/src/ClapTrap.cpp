@@ -6,22 +6,22 @@
 /*   By: misaac-c <misaac-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 11:19:20 by misaac-c          #+#    #+#             */
-/*   Updated: 2025/04/28 12:21:33 by misaac-c         ###   ########.fr       */
+/*   Updated: 2025/04/29 11:57:20 by misaac-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "../header/ClapTrap.hpp"
 
 ClapTrap::ClapTrap()
 {
-    _Name = "No_name_:/";
+    _Name = "No_Name:/";
     _HitPoints = 10;
     _Stamina = 10;
     _AttackDamage = 0;
-    std::cout << "Default constructor called\n";
+    std::cout << "Clap trap named " << _Name << " builted (default constructor)\n";
 }
 
-ClapTrap::ClapTrap(std::string name)
+ClapTrap::ClapTrap(const std::string& name)
 {
     _Name = name;
     _HitPoints = 10;
