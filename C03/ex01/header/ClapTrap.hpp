@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <aio.h>
+#include "ScavTrap.hpp" 
 
 class ClapTrap
 {
