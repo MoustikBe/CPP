@@ -6,11 +6,11 @@
 /*   By: misaac-c <misaac-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 11:05:27 by misaac-c          #+#    #+#             */
-/*   Updated: 2025/04/29 12:06:52 by misaac-c         ###   ########.fr       */
+/*   Updated: 2025/04/29 12:50:58 by misaac-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/ClapTrap.hpp"
+#include "../header/ScavTrap.hpp"
 
 int main()
 {

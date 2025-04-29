@@ -6,11 +6,11 @@
 /*   By: misaac-c <misaac-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 11:58:12 by misaac-c          #+#    #+#             */
-/*   Updated: 2025/04/29 12:02:50 by misaac-c         ###   ########.fr       */
+/*   Updated: 2025/04/29 12:55:57 by misaac-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/ClapTrap.hpp"
+#include "../header/DiamondTrap.hpp"
 
 DiamondTrap::DiamondTrap() : ClapTrap("No_Name:/_clap_name")
 {

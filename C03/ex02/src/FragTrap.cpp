@@ -6,11 +6,11 @@
 /*   By: misaac-c <misaac-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 13:01:43 by misaac-c          #+#    #+#             */
-/*   Updated: 2025/04/29 12:06:29 by misaac-c         ###   ########.fr       */
+/*   Updated: 2025/04/29 12:51:39 by misaac-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/ClapTrap.hpp"
+#include "../header/FragTrap.hpp"
 
 FragTrap::FragTrap() : ClapTrap()
 {
