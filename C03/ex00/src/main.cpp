@@ -6,7 +6,7 @@
 /*   By: misaac-c <misaac-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 11:05:27 by misaac-c          #+#    #+#             */
-/*   Updated: 2025/04/25 12:45:09 by misaac-c         ###   ########.fr       */
+/*   Updated: 2025/04/30 10:53:55 by misaac-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,19 @@
 
 int main()
 {
-	std::cout << "### TESTING CLAPTRAP ###\n" << std::endl;
-	{
-		std::cout << "\033[34mConstructing\033[0m" << std::endl;
-		ClapTrap a;
-		ClapTrap b("Cody");
-
-		std::cout << "\033[34mTesting\033[0m" << std::endl;
-		a.attack("some other robot");
-		a.takeDamage(10);
-		a.takeDamage(10);
-		a.beRepaired(5);
-		a.attack("some other other robot");
-		b.beRepaired(3);
-		for (int i = 0; i < 12; i++)
-			b.attack("Cody-clone");
-		b.beRepaired(3);
-		std::cout << "\033[34mDeconstructing\033[0m" << std::endl;
-	}
+	std::cout << "# -- TESTING CLAP_TRAP -- #\n";
+	ClapTrap A;
+	ClapTrap B("BOT_B");
+	ClapTrap C;
+	ClapTrap D(B);
+	std::cout << "~ - Object builted - ~\n";
+	A.attack("a computer");
+	B.attack("a keyboard");
+	A.takeDamage(15);
+	B.takeDamage(15);
+	A.beRepaired(5);
+	B.beRepaired(5);
+	C = B;
+	std::cout << "~ - All method tested - ~\n";
 	return (0);
 }
