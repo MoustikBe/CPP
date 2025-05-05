@@ -26,7 +26,7 @@ public:
     Dog(const Dog& other);
     Dog& operator=(const Dog& other);
     ~Dog();
-    void makeSound() const override;
+    void makeSound() const;
 };
 
 class Cat : public Animal
@@ -38,7 +38,7 @@ public:
     Cat(const Cat& other);
     Cat& operator=(const Cat& other);
     ~Cat();
-    void makeSound() const override;
+    void makeSound() const;
 };
 
 #endif 
