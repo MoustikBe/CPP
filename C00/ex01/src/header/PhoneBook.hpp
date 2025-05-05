@@ -3,7 +3,8 @@
 #include <iostream>
 #include <string.h>	
 #include <stdio.h>
-#include <aio.h> 
+#include <aio.h>
+#include <sstream>
 
 class Contact
 {

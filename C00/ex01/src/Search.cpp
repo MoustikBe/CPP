@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Search.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: misaac-c <misaac-c@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: misaac-c <misaac-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 13:13:38 by misaac-c          #+#    #+#             */
-/*   Updated: 2025/03/31 13:30:31 by misaac-c         ###   ########.fr       */
+/*   Updated: 2025/05/05 10:34:29 by misaac-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,8 @@ void SearchContact(PhoneBook *Book)
 		std::cout << "Select an ID : "; 
 		std::getline(std::cin, str);
 	}
-	id = stoi(str);
-		FullDisplay(Book, id);
+	std::istringstream iss(str);
+	iss >> id;
+	FullDisplay(Book, id);
 	return ;
 }

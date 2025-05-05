@@ -1,10 +1,10 @@
 NAME    = Bank
 C+	    = c++
-CFLAG   = -Wall -Werror -Wextra
+CFLAG   = -Wall -Werror -Wextra -std=c++98
 RM      = rm -rf
 OBJDIR  = obj
 SOURCES = src/file_archive/tests.cpp \
-		  src/my_files/Account.cpp
+		  src/my_file/Account.cpp
 
 OBJECTS = $(SOURCES:%.cpp=$(OBJDIR)/%.o)
 

@@ -1,6 +1,6 @@
 NAME    = megaphone
 C+	    = c++
-CFLAG   = -Wall -Werror -Wextra
+CFLAG   = -Wall -Werror -Wextra -std=c++98
 RM      = rm -rf
 SOURCES = megaphone.cpp
 OBJECTS = $(SOURCES:%.cpp=%.o)

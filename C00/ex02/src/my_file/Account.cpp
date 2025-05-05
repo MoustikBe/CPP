@@ -1,6 +1,6 @@
 // Fichier a rebuild //
 
-#include "Account.hpp"
+#include "../file_archive/Account.hpp"
 #include <iostream>
 #include <ctime>
 
@@ -113,7 +113,7 @@ void	Account::displayStatus( void ) const
 
 void	Account::_displayTimestamp( void )
 {
-    std::time_t now = std::time(nullptr);
+    std::time_t now = std::time(NULL);
     std::tm *ltm = std::localtime(&now);
 
     char buffer[20];
