@@ -6,7 +6,7 @@
 /*   By: misaac-c <misaac-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 09:42:57 by misaac-c          #+#    #+#             */
-/*   Updated: 2025/04/08 12:40:51 by misaac-c         ###   ########.fr       */
+/*   Updated: 2025/05/05 11:38:51 by misaac-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,12 +51,12 @@ int main(int argc, char **argv)
 	std::string in_data;
 	std::string compare_string = argv[2];
 	std::string replace_string = argv[3];
-	std::ifstream f_in{argv[1]};
+	std::ifstream f_in(argv[1]);
 	int collect_index;
 	if (f_in.is_open())
 	{
 		outfile = strcat(argv[1], ".replace");
-		std::ofstream f_ou{outfile};
+		std::ofstream f_ou(outfile);
 		while (std::getline(f_in, in_data))
 		{
 			collect_index = in_data.find(compare_string);

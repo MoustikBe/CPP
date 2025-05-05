@@ -6,7 +6,7 @@
 /*   By: misaac-c <misaac-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 12:53:32 by misaac-c          #+#    #+#             */
-/*   Updated: 2025/04/09 13:05:39 by misaac-c         ###   ########.fr       */
+/*   Updated: 2025/05/05 11:42:33 by misaac-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void Harl::error()
 void Harl::complain(std::string level)
 {
     std::string levels[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-    void (Harl::*function[])() {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+    void (Harl::*function[4])() = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
     for(int i = 0; i < 4; i++)
     {
         if(levels[i] == level)

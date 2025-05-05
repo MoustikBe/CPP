@@ -3,6 +3,7 @@
 
 // -- Library -- //
 #include <iostream>
+#include <cstdlib>
 
 // -- Class -- // 
 class Zombie

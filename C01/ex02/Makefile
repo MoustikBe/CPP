@@ -1,11 +1,9 @@
-NAME    = ZombieHorde
+NAME    = Pointer
 C+	    = c++
-CFLAG   = -Wall -Werror -Wextra
+CFLAG   = -Wall -Werror -Wextra -std=c++98
 RM      = rm -rf
 OBJDIR  = obj
-SOURCES = src/main.cpp \
-		  src/zombieHorde.cpp \
-		  src/Zombie.cpp
+SOURCES = main.cpp 
 
 OBJECTS = $(SOURCES:%.cpp=$(OBJDIR)/%.o)
 
@@ -15,7 +13,7 @@ $(OBJDIR)/%.o: %.cpp
 
 $(NAME): $(OBJECTS)
 	@$(C+) $(OBJECTS) -o $(NAME)
-	@echo "\033[0;32mProject compiled -> ./ZombieHorde"
+	@echo "\033[0;32mProject compiled -> ./Pointer"
 
 clean : 
 	@$(RM) -r $(OBJDIR)  > /dev/null 2>&1
