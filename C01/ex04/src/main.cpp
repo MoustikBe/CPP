@@ -16,29 +16,21 @@
 #include <stdio.h>
 #include <string.h>
 
-std::string change_line(std::string in_data, std::string replace_line, int index)
+std::string replace_all(const std::string& line, const std::string& search, const std::string& replace)
 {
-	std::string n_line;
-	int i = 0;
-	int i_;
+    std::string result;
+    size_t pos = 0;
+    size_t found;
 
-	while (i != index)
-	{
-		n_line.push_back(in_data[i]);
-		i++; 
-	}
-	i_ = i;
-	n_line += replace_line;
-	while (in_data[i_] != ' ' && in_data[i_])
-		i_++;
-	while (in_data[i_])
-	{
-		n_line.push_back(in_data[i_]);
-		i_++; 
-	}
-	return(n_line);
+    while ((found = line.find(search, pos)) != std::string::npos)
+    {
+        result.append(line, pos, found - pos);  // ajouter la partie avant le mot trouvé
+        result += replace;                      // ajouter le mot de remplacement
+        pos = found + search.length();          // avancer après le mot trouvé
+    }
+    result += line.substr(pos); // ajouter le reste de la ligne
+    return result;
 }
-
 
 int main(int argc, char **argv)
 {
@@ -52,18 +44,14 @@ int main(int argc, char **argv)
 	std::string compare_string = argv[2];
 	std::string replace_string = argv[3];
 	std::ifstream f_in(argv[1]);
-	int collect_index;
 	if (f_in.is_open())
 	{
 		outfile = strcat(argv[1], ".replace");
 		std::ofstream f_ou(outfile);
 		while (std::getline(f_in, in_data))
 		{
-			collect_index = in_data.find(compare_string);
-			if(collect_index != -1)
-				in_data = change_line(in_data, replace_string, collect_index);
-			f_ou << in_data;
-			f_ou << "\n";
+			in_data = replace_all(in_data, compare_string, replace_string);
+			f_ou << in_data << "\n";
 		}
 	}
 	else
