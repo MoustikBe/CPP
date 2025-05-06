@@ -1,10 +1,10 @@
-NAME    = Polymorphisme
+NAME    = Bureaucrat
 C+	    = c++
 CFLAG   = -Wall -Werror -Wextra -std=c++98
 RM      = rm -rf
 OBJDIR  = obj
 SOURCES = src/main.cpp \
-		  src/Animal.cpp src/WrongAnimal.cpp
+		  src/Bureaucrat.cpp
 
 
 
@@ -16,7 +16,7 @@ $(OBJDIR)/%.o: %.cpp
 
 $(NAME): $(OBJECTS)
 	@$(C+) $(OBJECTS) -o $(NAME)
-	@echo "\033[0;32mProject compiled -> ./Polymorphisme"
+	@echo "\033[0;32mProject compiled -> ./Bureaucrat"
 
 clean : 
 	@$(RM) -r $(OBJDIR)  > /dev/null 2>&1
