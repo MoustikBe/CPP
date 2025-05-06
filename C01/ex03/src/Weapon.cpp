@@ -6,7 +6,7 @@
 /*   By: misaac-c <misaac-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 11:44:11 by misaac-c          #+#    #+#             */
-/*   Updated: 2025/04/07 13:21:14 by misaac-c         ###   ########.fr       */
+/*   Updated: 2025/05/06 11:10:31 by misaac-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,3 @@ void	Weapon::setType(std::string type)
 {
 	_type = type;	
 }
-
-/*
-Implement a Weapon class that has:
-• A private attribute type, which is a string.
-• A getType() member function that returns a constant reference to type.
-• A setType() member function that sets type using the new value passed as a parameter.
-V */ 
