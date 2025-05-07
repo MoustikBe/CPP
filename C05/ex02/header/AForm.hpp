@@ -19,10 +19,6 @@ public:
     Form(const Form& other);
     Form& operator=(const Form& other);
     ~Form();
-    std::string   GetName() const;
-    bool                GetSign() const;
-    int           GetGradeToSign() const;
-    int           GetGradeToExec() const;
     void beSigned(Bureaucrat other);
 };
 std::ostream& operator<<(std::ostream& os, const Form &other);

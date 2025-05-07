@@ -20,10 +20,6 @@ Form::Form() : _Name("M42"), _Signed(false), _GradeToSign(150), _GradeToExec(150
 
 Form::Form(std::string name, bool signStatus, int gradeToSign, int gradToExec) : _Name(name), _Signed(signStatus), _GradeToSign(gradeToSign), _GradeToExec(gradToExec)
 {
-    if(_GradeToExec > 150  || _GradeToSign > 150)
-        throw (Bureaucrat::GradeTooLowException());
-    else if(_GradeToSign < 1 || _GradeToExec < 1)
-        throw (Bureaucrat::GradeTooHighException());
     std::cout << "Constructor FORM called\n" ;
 }
 
@@ -51,30 +47,4 @@ void Form::beSigned(Bureaucrat other)
         throw (Bureaucrat::GradeTooLowException());
     std::cout << "Form signed\n";
     _Signed = true;
-}
-
-std::string Form::GetName() const 
-{
-    return(_Name);
-}
-
-bool Form::GetSign() const 
-{
-    return(_Signed);
-}
-
-int Form::GetGradeToSign() const 
-{
-    return(_GradeToSign);
-}
-
-int Form::GetGradeToExec() const 
-{
-    return(_GradeToExec);
-}
-
-std::ostream& operator<<(std::ostream& os, const Form& other)
-{
-	os << "Form : " << other.GetName() << "\nSigned ? : " << other.GetSign() << "\nGrade to sign : " << other.GetGradeToSign() << "\nGrade to exec : " << other.GetGradeToExec() << "\n";
-	return(os);
 }
