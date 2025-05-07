@@ -15,34 +15,36 @@
 
 Form::Form() : _Name("M42"), _Signed(false), _GradeToSign(150), _GradeToExec(150)
 {
-    std::cout << "Default constructor called\n" ;
+    std::cout << "Default constructor FORM called\n" ;
 }
 
-Form::Form(std::string name, bool signStatus, int gradeToSign, int gradToExec) : _Name(name), _Signed(signStatus), _GradeToSign(gradeToSign), _GradeToExec(_GradeToExec)
+Form::Form(std::string name, bool signStatus, int gradeToSign, int gradToExec) : _Name(name), _Signed(signStatus), _GradeToSign(gradeToSign), _GradeToExec(gradToExec)
 {
-    std::cout << "Constructor called\n" ;
+    std::cout << "Constructor FORM called\n" ;
 }
 
 Form::Form(const Form& other) : _Name(other._Name), _Signed(other._Signed), _GradeToSign(other._GradeToSign), _GradeToExec(other._GradeToExec)
 {
-    std::cout << "Copy constructor called\n";
+    std::cout << "Copy constructor FORM called\n";
 }
 
 Form& Form::operator=(const Form& other)
 {
     if(this != &other)
         _Signed = other._Signed;
-    std::cout << "Surcharge of the operator =\n";
+    std::cout << "Surcharge FORM of the operator =\n";
+    return(*this);
 }
 
 Form::~Form()
 {
-    std::cout << "Destructor called\n";
+    std::cout << "Destructor FORM called\n";
 }
 
 void Form::beSigned(Bureaucrat other)
 {
-    if(other.GetGrade() < _GradeToSign)
-        throw (GradeTooLowException());
+    if(other.GetGrade() > _GradeToSign)
+        throw (Bureaucrat::GradeTooLowException());
+    std::cout << "Form signed\n";
     _Signed = true;
 }

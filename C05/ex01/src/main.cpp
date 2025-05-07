@@ -11,10 +11,12 @@
 /* ************************************************************************** */
 
 #include "../header/Bureaucrat.hpp"
+#include "../header/Form.hpp"
 
 int main(void)
 {
     /* TEST, all good */
+    /*
     try
     {
         Bureaucrat Marc("Marc", 5);
@@ -29,7 +31,9 @@ int main(void)
     {
         std::cout << "Error caught : " << e.what();
     }
+    */
     /* TEST, too low */
+    /*
     try
     {
         Bureaucrat Patrick("Patrick", 150);
@@ -44,12 +48,30 @@ int main(void)
     {
         std::cout << "Error caught : " << e.what();
     }
+    */
     /* TEST, too high */
+    /*
     try
     {
         Bureaucrat Bob("Bob", 1);
         Bob.IncreaseGrade();
         std::cout << Bob;
+    }
+    catch (const Bureaucrat::GradeTooHighException &e)
+    {
+        std::cout << "Error caught : " << e.what();
+    }
+    catch (const Bureaucrat::GradeTooLowException &e)
+    {
+        std::cout << "Error caught : " << e.what();
+    }
+    */
+    try
+    {
+        Form Paper("42", false, 15, 15);
+        Bureaucrat Carlo("Carlo", 100);
+        Paper.beSigned(Carlo);
+        std::cout << Carlo;
     }
     catch (const Bureaucrat::GradeTooHighException &e)
     {

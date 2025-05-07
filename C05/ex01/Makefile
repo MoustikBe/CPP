@@ -4,7 +4,8 @@ CFLAG   = -Wall -Werror -Wextra -std=c++98
 RM      = rm -rf
 OBJDIR  = obj
 SOURCES = src/main.cpp \
-		  src/Bureaucrat.cpp
+		  src/Bureaucrat.cpp src/Form.cpp 
+		  
 
 
 
