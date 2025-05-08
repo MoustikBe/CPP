@@ -16,6 +16,4 @@ public:
     void SetIdea(int index, std::string NewIdea);
 };
 
-
-
 #endif

@@ -6,7 +6,7 @@
 /*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 10:59:01 by misaac-c          #+#    #+#             */
-/*   Updated: 2025/05/08 19:56:33 by max              ###   ########.fr       */
+/*   Updated: 2025/05/08 20:21:58 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ int main()
 {
     Dog A;
     Dog C(A);
-    /*
     Brain NewBrain;
     NewBrain.SetIdea(5, "I think");
     std::cout << "Idea 5 -> " << NewBrain.GetIdea(5) << "\n";
@@ -28,5 +27,4 @@ int main()
     delete j;//should not create a leak
     delete i;
     return(0);
-    */
 }
