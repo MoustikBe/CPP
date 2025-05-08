@@ -16,12 +16,14 @@ Dog::Dog(const Dog& other) : Animal(other), _brain(new Brain(*other._brain))
 
 Dog& Dog::operator=(const Dog& other)
 {
-    if(this != &other)
-    {
-        type = other.type;
-        std::cout << "Dog object assigned\n";
-    }
-    return(*this);
+    if (this != &other)
+	{
+		Animal::operator=(other);
+		if (_brain)
+			delete _brain;
+		_brain = new Brain(*other._brain);
+	}
+	return *this;
 }
 
 Dog::~Dog()
