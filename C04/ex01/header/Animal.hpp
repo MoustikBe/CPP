@@ -17,28 +17,4 @@ public:
     std::string getType() const;
 };
 
-class Dog : public Animal
-{
-private:
-    Brain *_brain;
-public:
-    Dog();
-    Dog(const Dog& other);
-    Dog& operator=(const Dog& other);
-    ~Dog();
-    void makeSound() const;
-};
-
-class Cat : public Animal
-{
-private:
-    Brain *_brain;
-public:
-    Cat();
-    Cat(const Cat& other);
-    Cat& operator=(const Cat& other);
-    ~Cat();
-    void makeSound() const;
-};
-
 #endif 

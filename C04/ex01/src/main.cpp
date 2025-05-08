@@ -3,18 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: misaac-c <misaac-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 10:59:01 by misaac-c          #+#    #+#             */
-/*   Updated: 2025/04/30 13:38:55 by misaac-c         ###   ########.fr       */
+/*   Updated: 2025/05/08 19:56:33 by max              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/Animal.hpp"
+#include "../header/Cat.hpp"
+#include "../header/Dog.hpp"
 #include "../header/WrongAnimal.hpp"
 
 int main()
 {
+    Dog A;
+    Dog C(A);
+    /*
     Brain NewBrain;
     NewBrain.SetIdea(5, "I think");
     std::cout << "Idea 5 -> " << NewBrain.GetIdea(5) << "\n";
@@ -23,4 +28,5 @@ int main()
     delete j;//should not create a leak
     delete i;
     return(0);
+    */
 }
