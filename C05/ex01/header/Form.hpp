@@ -23,7 +23,17 @@ public:
     bool                GetSign() const;
     int           GetGradeToSign() const;
     int           GetGradeToExec() const;
-    void beSigned(Bureaucrat other);
+    void        beSigned(Bureaucrat other);
+    class GradeTooHighException : public std::exception
+    {
+        public:
+            const char* what() const throw();
+    };
+    class GradeTooLowException : public std::exception
+    {
+        public:
+            const char* what() const throw();
+    };
 };
 std::ostream& operator<<(std::ostream& os, const Form &other);
 

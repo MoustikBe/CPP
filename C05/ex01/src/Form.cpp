@@ -6,7 +6,7 @@
 /*   By: misaac-c <misaac-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 13:29:25 by misaac-c          #+#    #+#             */
-/*   Updated: 2025/05/06 14:25:27 by misaac-c         ###   ########.fr       */
+/*   Updated: 2025/05/08 13:32:45 by misaac-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ Form::Form() : _Name("M42"), _Signed(false), _GradeToSign(150), _GradeToExec(150
 Form::Form(std::string name, bool signStatus, int gradeToSign, int gradToExec) : _Name(name), _Signed(signStatus), _GradeToSign(gradeToSign), _GradeToExec(gradToExec)
 {
     if(_GradeToExec > 150  || _GradeToSign > 150)
-        throw (Bureaucrat::GradeTooLowException());
+        throw (GradeTooLowException());
     else if(_GradeToSign < 1 || _GradeToExec < 1)
-        throw (Bureaucrat::GradeTooHighException());
+        throw (GradeTooHighException());
     std::cout << "Constructor FORM called\n" ;
 }
 
@@ -48,7 +48,7 @@ Form::~Form()
 void Form::beSigned(Bureaucrat other)
 {
     if(other.GetGrade() > _GradeToSign)
-        throw (Bureaucrat::GradeTooLowException());
+        throw (GradeTooLowException());
     std::cout << "Form signed\n";
     _Signed = true;
 }
@@ -71,6 +71,16 @@ int Form::GetGradeToSign() const
 int Form::GetGradeToExec() const 
 {
     return(_GradeToExec);
+}
+
+const char* Form::GradeTooHighException::what() const throw()
+{
+    return("Grade to high !\n");
+}
+
+const char* Form::GradeTooLowException::what() const throw()
+{
+    return("Grade to low !\n");
 }
 
 std::ostream& operator<<(std::ostream& os, const Form& other)
