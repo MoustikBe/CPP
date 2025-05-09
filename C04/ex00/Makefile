@@ -4,7 +4,7 @@ CFLAG   = -Wall -Werror -Wextra -std=c++98
 RM      = rm -rf
 OBJDIR  = obj
 SOURCES = src/main.cpp \
-		  src/Animal.cpp src/WrongAnimal.cpp src/Dog.cpp src/Cat.cpp
+		  src/Animal.cpp src/WrongAnimal.cpp src/WrongCat.cpp src/Dog.cpp src/Cat.cpp
 
 
 

@@ -6,7 +6,7 @@
 /*   By: misaac-c <misaac-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 13:18:13 by misaac-c          #+#    #+#             */
-/*   Updated: 2025/04/30 13:29:56 by misaac-c         ###   ########.fr       */
+/*   Updated: 2025/05/09 10:02:23 by misaac-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,38 +50,3 @@ std::string WrongAnimal::getType() const
 {
     return(type);
 }
-
-// # -- Dog Class -- # //
-
-WrongCat::WrongCat()
-{
-    type = "WrongCat";
-    std::cout << "WrongCat [created, default constructor]\n";
-}
-
-WrongCat::WrongCat(const WrongCat& other) : WrongAnimal(other)
-{
-    std::cout << "WrongCat copied\n";
-}
-
-WrongCat& WrongCat::operator=(const WrongCat& other)
-{
-    if(this != &other)
-    {
-        type = other.type;
-        std::cout << "WrongCat object assigned\n";
-    }
-    return(*this);
-}
-
-WrongCat::~WrongCat()
-{
-    std::cout << "WrongCat [removed]\n";
-}
-
-void WrongCat::makeSound() const
-{
-    std::cout << "Miaou ![wrong :/]\n";
-}
-
-// # -- Cat Class -- # //

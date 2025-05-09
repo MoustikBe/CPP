@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: max <max@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: misaac-c <misaac-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 10:59:01 by misaac-c          #+#    #+#             */
-/*   Updated: 2025/05/08 20:02:03 by max              ###   ########.fr       */
+/*   Updated: 2025/05/09 10:05:38 by misaac-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "../header/Dog.hpp"
 #include "../header/Cat.hpp"
 #include "../header/WrongAnimal.hpp"
+#include "../header/WrongCat.hpp"
 
 int main()
 {
