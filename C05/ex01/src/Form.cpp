@@ -6,7 +6,7 @@
 /*   By: misaac-c <misaac-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 13:29:25 by misaac-c          #+#    #+#             */
-/*   Updated: 2025/05/08 13:32:45 by misaac-c         ###   ########.fr       */
+/*   Updated: 2025/05/09 11:49:44 by misaac-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ Form::~Form()
     std::cout << "Destructor FORM called\n";
 }
 
-void Form::beSigned(Bureaucrat other)
+void Form::beSigned(Bureaucrat& other)
 {
     if(other.GetGrade() > _GradeToSign)
         throw (GradeTooLowException());

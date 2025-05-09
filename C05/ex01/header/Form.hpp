@@ -4,6 +4,7 @@
 #include "Bureaucrat.hpp"
 #include <iostream>
 
+class Bureaucrat;
 
 class Form
 {
@@ -23,7 +24,7 @@ public:
     bool                GetSign() const;
     int           GetGradeToSign() const;
     int           GetGradeToExec() const;
-    void        beSigned(Bureaucrat other);
+    void        beSigned(Bureaucrat& other);
     class GradeTooHighException : public std::exception
     {
         public:

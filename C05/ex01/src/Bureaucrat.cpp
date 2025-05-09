@@ -6,7 +6,7 @@
 /*   By: misaac-c <misaac-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 10:31:08 by misaac-c          #+#    #+#             */
-/*   Updated: 2025/05/08 13:28:35 by misaac-c         ###   ########.fr       */
+/*   Updated: 2025/05/09 11:50:04 by misaac-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,7 @@ void Bureaucrat::signForm(Form &paper)
     {
         std::cout << "Form not signed\n";
         std::cout << _Name <<  " couldn't signed " << paper.GetName() << " because the grade is too low\n";
-    }
+    } 
 }
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& other)
