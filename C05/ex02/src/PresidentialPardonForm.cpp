@@ -30,3 +30,12 @@ PresidentialPardonForm::~PresidentialPardonForm()
 {
     std::cout << "[Presidential Pardon destructor]\n";
 }
+
+void    PresidentialPardonForm::execute(Bureaucrat const& executor) const
+{
+    if(GetSign() == false)
+        throw(AForm::FormNotSigned());
+    else if(executor.GetGrade() > GetGradeToExec())
+        throw(AForm::GradeTooLowException());
+    std::cout << _target << " has been pardoned by Zaphod Beeblebrox\n";
+}

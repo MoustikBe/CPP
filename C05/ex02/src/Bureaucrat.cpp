@@ -6,7 +6,7 @@
 /*   By: misaac-c <misaac-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 10:31:08 by misaac-c          #+#    #+#             */
-/*   Updated: 2025/05/12 12:18:01 by misaac-c         ###   ########.fr       */
+/*   Updated: 2025/05/12 13:09:26 by misaac-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,13 +94,30 @@ void Bureaucrat::signForm(AForm &paper)
     try
     {
         paper.beSigned(*this); 
-        std::cout << _Name <<  " signed " << paper.GetName();
+        std::cout << _Name <<  " signed " << paper.GetName() << "\n";
     }
-    catch (const std::exception &e) // Peut aussi être const Form::GradeTooLowException &e //
+    catch (const std::exception &e)
     {
         std::cout << "Form not signed\n";
         std::cout << _Name <<  " couldn't signed " << paper.GetName() << " because the grade is too low\n";
     } 
+}
+
+void Bureaucrat::executeForm(AForm const& form) const
+{
+    try
+    {
+        form.execute(*this);
+        std::cout << _Name <<  " executed " << form.GetName() << "\n";
+    }
+    catch(const AForm::FormNotSigned &e)
+    {
+        std::cout << "Form not signed\n";
+    }
+    catch(const AForm::GradeTooLowException &e)
+    {
+        std::cout << _Name <<  " couldn't execute " << form.GetName() << " because the grade is too low\n";
+    }
 }
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& other)

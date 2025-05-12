@@ -2,17 +2,17 @@
 
 ShrubberyCreationForm::ShrubberyCreationForm() : AForm(), _target("DEFAULT")
 {
-    std::cout << "[Robotomy Pardon default constructor]\n";
+    std::cout << "[Shrubbery default constructor]\n";
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string Target) : AForm("ShrubberyCreationForm", false, 145, 137), _target(Target)
 {
-    std::cout << "[Robotomy Pardon constructor]\n";
+    std::cout << "[Shrubbery constructor]\n";
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& other) : AForm(other), _target(other._target)
 {
-    std::cout << "[Robotomy Pardon copy constructor]\n";
+    std::cout << "[Shrubbery copy constructor]\n";
 }
 
 ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm& other)
@@ -22,13 +22,13 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationF
         AForm::operator=(other);
         _target = other._target;
     }
-    std::cout << "[Robotomy Pardon surcharger =]\n";
+    std::cout << "[Shrubbery surcharger =]\n";
     return(*this);
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {
-    std::cout << "[Robotomy Pardon destructor]\n";
+    std::cout << "[Shrubbery destructor]\n";
 }
 
 void ShrubberyCreationForm::execute(Bureaucrat const& executor) const

@@ -5,7 +5,7 @@ RM      = rm -rf
 OBJDIR  = obj
 SOURCES = src/main.cpp \
 		  src/Bureaucrat.cpp src/AForm.cpp \
-			src/ShrubberyCreationForm.cpp
+		  src/PresidentialPardonForm.cpp src/RobotomyRequestForm.cpp src/ShrubberyCreationForm.cpp
 
 OBJECTS = $(SOURCES:%.cpp=$(OBJDIR)/%.o)
 
