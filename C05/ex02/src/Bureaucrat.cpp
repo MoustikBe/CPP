@@ -6,7 +6,7 @@
 /*   By: misaac-c <misaac-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 10:31:08 by misaac-c          #+#    #+#             */
-/*   Updated: 2025/05/12 13:09:26 by misaac-c         ###   ########.fr       */
+/*   Updated: 2025/05/12 13:20:57 by misaac-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,7 @@
 
 Bureaucrat::Bureaucrat() : _Name("Bureaucrate"), _Grade(1)
 {
-    std::cout << " ---------------------------- \n";
-    std::cout << "Default constructor called\nName -> " << _Name << "\nGrade -> " << _Grade << "\n";
-    std::cout << " ---------------------------- \n";
+    std::cout << "Default Bureaucrat constructor called\n";
 }
 
 Bureaucrat::Bureaucrat(std::string Name, int Grade) : _Name(Name)
@@ -28,29 +26,25 @@ Bureaucrat::Bureaucrat(std::string Name, int Grade) : _Name(Name)
         throw GradeTooHighException();
     else
         _Grade = Grade;
-    std::cout << " ---------------------------- \n";
-    std::cout << "Constructor called\nName -> " << _Name << "\nGrade -> " << _Grade << "\n";
-    std::cout << " ---------------------------- \n";
+    std::cout << "Constructor Bureaucrat called\n";
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat& other) : _Name(other._Name), _Grade(other._Grade)
 {
-    std::cout << " ---------------------------- \n";
-    std::cout << "Copy constructor called\nName -> " << _Name << "\nGrade -> " << _Grade << "\n";
-    std::cout << " ---------------------------- \n";
+    std::cout << "Copy constructor Bureaucrat called\nName -> " << _Name << "\nGrade -> " << _Grade << "\n";
 }
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat &other)
 {
     if(this != &other)
         _Grade = other._Grade;
-    std::cout << "Surcharger of = called\n";
+    std::cout << "Surcharger Bureaucrat of = called\n";
     return(*this);
 }
 
 Bureaucrat::~Bureaucrat()
 {
-    std::cout << "Destuctor called\n";
+    std::cout << "Destuctor Bureaucrat called\n";
 }
 
 int Bureaucrat::GetGrade() const
