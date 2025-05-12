@@ -6,7 +6,7 @@
 /*   By: misaac-c <misaac-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 09:42:57 by misaac-c          #+#    #+#             */
-/*   Updated: 2025/05/05 11:38:51 by misaac-c         ###   ########.fr       */
+/*   Updated: 2025/05/12 12:08:16 by misaac-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@ std::string replace_all(const std::string& line, const std::string& search, cons
 
     while ((found = line.find(search, pos)) != std::string::npos)
     {
-        result.append(line, pos, found - pos);  // ajouter la partie avant le mot trouvé
-        result += replace;                      // ajouter le mot de remplacement
-        pos = found + search.length();          // avancer après le mot trouvé
+        result.append(line, pos, found - pos);
+        result += replace;
+        pos = found + search.length();
     }
-    result += line.substr(pos); // ajouter le reste de la ligne
+    result += line.substr(pos);
     return result;
 }
 

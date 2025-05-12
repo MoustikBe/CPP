@@ -1,13 +1,11 @@
 NAME    = Bureaucrat
 C+	    = c++
-CFLAG   = -Wall -Werror -Wextra -std=c++98
+CFLAG   = -Wall -Werror -Wextra -std=c++98 -g3
 RM      = rm -rf
 OBJDIR  = obj
 SOURCES = src/main.cpp \
-		  src/Bureaucrat.cpp src/Form.cpp 
-		  
-
-
+		  src/Bureaucrat.cpp src/AForm.cpp \
+			src/ShrubberyCreationForm.cpp
 
 OBJECTS = $(SOURCES:%.cpp=$(OBJDIR)/%.o)
 
