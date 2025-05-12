@@ -6,7 +6,7 @@
 /*   By: misaac-c <misaac-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 10:31:08 by misaac-c          #+#    #+#             */
-/*   Updated: 2025/05/09 11:50:04 by misaac-c         ###   ########.fr       */
+/*   Updated: 2025/05/12 10:39:21 by misaac-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ void Bureaucrat::signForm(Form &paper)
         paper.beSigned(*this); 
         std::cout << _Name <<  " signed " << paper.GetName();
     }
-    catch (const Bureaucrat::GradeTooLowException &e)
+    catch (const std::exception &e) // Peut aussi être const Form::GradeTooLowException &e //
     {
         std::cout << "Form not signed\n";
         std::cout << _Name <<  " couldn't signed " << paper.GetName() << " because the grade is too low\n";
