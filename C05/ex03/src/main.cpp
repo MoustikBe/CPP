@@ -6,7 +6,7 @@
 /*   By: misaac-c <misaac-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 10:19:27 by misaac-c          #+#    #+#             */
-/*   Updated: 2025/05/12 13:31:22 by misaac-c         ###   ########.fr       */
+/*   Updated: 2025/05/13 11:02:05 by misaac-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "../header/ShrubberyCreationForm.hpp"
 #include "../header/RobotomyRequestForm.hpp"
 #include "../header/PresidentialPardonForm.hpp"
-
+#include "../header/Intern.hpp"
 
 int main(void)
 {
@@ -58,6 +58,30 @@ int main(void)
         std::cout << "\n";
         Carlo.signForm(Form3);
         Carlo.executeForm(Form3);
+        std::cout << "\nEND OF THE  TEST, destroying the objects.....\e[0m\n";
+    }
+    catch (const AForm::FormNotSigned &e)
+    {
+        std::cout << "Form not Signed !\n";
+    }
+    catch (const AForm::GradeTooHighException &e)
+    {
+        std::cout << "Grade is too high !\n";
+    }
+    catch (const AForm::GradeTooLowException &e)
+    {
+        std::cout << "Grade is too low !\n";
+    }
+    std::cout << "\n\n";
+    // -- Intern test -- // 
+    try
+    {
+        Bureaucrat Carlo("Carlo", 2);
+        Intern Achar;
+        AForm *TestForm = Achar.makeForm("Presidential", "mundo");
+        std::cout << "\e[1;34mCONSTRUCTOR BUILTED, testing them.....\n\n";
+        TestForm->beSigned(Carlo);
+        TestForm->execute(Carlo);
         std::cout << "\nEND OF THE  TEST, destroying the objects.....\e[0m\n";
     }
     catch (const AForm::FormNotSigned &e)
