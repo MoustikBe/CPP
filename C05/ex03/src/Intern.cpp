@@ -42,9 +42,9 @@ AForm* Intern::makeForm(const std::string FormName, const std::string target)
 
     const std::string FormOption[] = 
     {
-        "Shruberry",
-        "Robotomy",
-        "Presidential"
+        "shruberry request",
+        "robotomy request",
+        "presidential request"
     };
     AForm* (*functions[])(const std::string&) = 
     {

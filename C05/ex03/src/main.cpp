@@ -6,7 +6,7 @@
 /*   By: misaac-c <misaac-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 10:19:27 by misaac-c          #+#    #+#             */
-/*   Updated: 2025/05/13 11:02:05 by misaac-c         ###   ########.fr       */
+/*   Updated: 2025/05/13 11:07:49 by misaac-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ int main(void)
     {
         Bureaucrat Carlo("Carlo", 2);
         Intern Achar;
-        AForm *TestForm = Achar.makeForm("Presidential", "mundo");
+        AForm *TestForm = Achar.makeForm("presidential request", "mundo");
         std::cout << "\e[1;34mCONSTRUCTOR BUILTED, testing them.....\n\n";
         TestForm->beSigned(Carlo);
         TestForm->execute(Carlo);
