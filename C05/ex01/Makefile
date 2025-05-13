@@ -1,4 +1,4 @@
-NAME    = Bureaucrat
+NAME    = Form
 C+	    = c++
 CFLAG   = -Wall -Werror -Wextra -std=c++98 -g3
 RM      = rm -rf
@@ -17,7 +17,7 @@ $(OBJDIR)/%.o: %.cpp
 
 $(NAME): $(OBJECTS)
 	@$(C+) $(OBJECTS) -o $(NAME)
-	@echo "\033[0;32mProject compiled -> ./Bureaucrat"
+	@echo "\033[0;32mProject compiled -> ./Form"
 
 clean : 
 	@$(RM) -r $(OBJDIR)  > /dev/null 2>&1

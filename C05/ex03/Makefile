@@ -1,6 +1,6 @@
-NAME    = Bureaucrat
+NAME    = Intern
 C+	    = c++
-CFLAG   = -std=c++98 -g3
+CFLAG   = -Wall -Werror -Wextra -std=c++98 -g3
 RM      = rm -rf
 OBJDIR  = obj
 SOURCES = src/main.cpp \
@@ -16,7 +16,7 @@ $(OBJDIR)/%.o: %.cpp
 
 $(NAME): $(OBJECTS)
 	@$(C+) $(OBJECTS) -o $(NAME)
-	@echo "\033[0;32mProject compiled -> ./Bureaucrat"
+	@echo "\033[0;32mProject compiled -> ./Intern"
 
 clean : 
 	@$(RM) -r $(OBJDIR)  > /dev/null 2>&1
