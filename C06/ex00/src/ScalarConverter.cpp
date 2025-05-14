@@ -1,4 +1,10 @@
 #include "../header/ScalarConverter.hpp"
+#include <stdio.h>
+#include <stdlib.h>
+#include <variant>
+#include <sstream>
+#include <string>
+
 
 ScalarConvert::ScalarConvert()
 {
@@ -71,16 +77,29 @@ bool double_detector(std::string literal)
 
 void ScalarConvert::convert(std::string literal)
 {
+    char *endPtr;
+    char new_val = '\0';
     // -- Step 1, detection -- //
     std::cout << "size -> "  <<  literal.size() <<  "\n";
     if(literal.size() == 1 && !isdigit(literal[0]))
-        std::cout << "Char detected\n";
+        new_val = literal[0];
     else if(int_detector(literal))
-        std::cout << "Int detected\n";
+    {
+        //new_val = static_cast<double>(strtoi(literal));
+    }
     else if(float_detector(literal))
-        std::cout << "Float detected\n";
+    {
+        new_val = static_cast<double>(strtof(literal.c_str(), &endPtr));
+    }
     else if(double_detector(literal))
-        std::cout << "Double detected\n";
+    {
+        new_val = static_cast<double>(strtod(literal.c_str(), &endPtr));
+    }
     else
+    {
         std::cout << "Unknow type\n"; 
+    }
+    std::cout << "Testing new_val -> " << new_val << "\n";
+
+
 }
