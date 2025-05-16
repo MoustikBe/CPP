@@ -77,29 +77,14 @@ bool double_detector(std::string literal)
 
 void ScalarConvert::convert(std::string literal)
 {
-    char *endPtr;
-    char new_val = '\0';
-    // -- Step 1, detection -- //
-    std::cout << "size -> "  <<  literal.size() <<  "\n";
     if(literal.size() == 1 && !isdigit(literal[0]))
-        new_val = literal[0];
+		CharScenario(literal);
     else if(int_detector(literal))
-    {
-        //new_val = static_cast<double>(strtoi(literal));
-    }
+		IntScenario(literal);
     else if(float_detector(literal))
-    {
-        new_val = static_cast<double>(strtof(literal.c_str(), &endPtr));
-    }
+		FloatScenario(literal);
     else if(double_detector(literal))
-    {
-        new_val = static_cast<double>(strtod(literal.c_str(), &endPtr));
-    }
+		DoubleScenario(literal);
     else
-    {
-        std::cout << "Unknow type\n"; 
-    }
-    std::cout << "Testing new_val -> " << new_val << "\n";
-
-
+        std::cout << "Unknow type\n";
 }

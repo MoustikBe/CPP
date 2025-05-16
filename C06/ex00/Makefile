@@ -3,7 +3,7 @@ C+	    = c++
 CFLAG   = -Wall -Werror -Wextra -std=c++98 -g3
 RM      = rm -rf
 OBJDIR  = obj
-SOURCES = src/main.cpp src/ScalarConverter.cpp
+SOURCES = src/main.cpp src/ScalarConverter.cpp src/scenario.cpp
 
 OBJECTS = $(SOURCES:%.cpp=$(OBJDIR)/%.o)
 
