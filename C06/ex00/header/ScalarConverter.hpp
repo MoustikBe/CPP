@@ -25,5 +25,6 @@ void    CharScenario(std::string literal);
 void    IntScenario(std::string literal);
 void    FloatScenario(std::string literal);
 void    DoubleScenario(std::string literal);
+void    SpecialScenario(std::string literal);
 
 #endif

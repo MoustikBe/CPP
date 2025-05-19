@@ -80,3 +80,11 @@ void    DoubleScenario(std::string literal)
     FloatParsing(static_cast<float>(DoubleConvert));
     DoubleParsing(DoubleConvert);
 }
+
+void    SpecialScenario(std::string literal)
+{
+    if(literal == "+inff" || literal == "-inff" || literal == "nanf")
+        FloatScenario(literal);
+    else
+        DoubleScenario(literal);
+}

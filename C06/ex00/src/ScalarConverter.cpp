@@ -85,6 +85,9 @@ void ScalarConvert::convert(std::string literal)
 		FloatScenario(literal);
     else if(double_detector(literal))
 		DoubleScenario(literal);
+    else if(literal == "nan" || literal == "-inf" || literal == "+inf" || 
+            literal == "nanf"|| literal == "-inff"|| literal == "+inff")
+        SpecialScenario(literal);
     else
         std::cout << "Unknow type\n";
 }
