@@ -3,6 +3,11 @@
 
 #include <iostream>
 #include <cstdlib>
+#include <math.h>
+#include <limits>
+
+#define MAX_INT 2147483647
+#define MIN_INT -2147483648
 
 class ScalarConvert
 {
