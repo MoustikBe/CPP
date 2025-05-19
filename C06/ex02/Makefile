@@ -1,9 +1,9 @@
 NAME    = ex02
 C+	    = c++
-CFLAG   = -Wall -Werror -Wextra -std=c++98 -g3
+CFLAG   =  -std=c++98 -g3
 RM      = rm -rf
 OBJDIR  = obj
-SOURCES = 
+SOURCES = src/main.cpp src/Base.cpp
 
 OBJECTS = $(SOURCES:%.cpp=$(OBJDIR)/%.o)
 
