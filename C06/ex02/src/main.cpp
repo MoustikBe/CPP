@@ -10,12 +10,16 @@ Base* generate(void)
     switch (RandomVal)
     {
         case 0:
+            std::cout << "Object A created\n";
             return(new A());
         case 1:
+            std::cout << "Object B created\n";
             return(new B());
         case 2:
+            std::cout << "Object C created\n";
             return(new C());
         default:
+            std::cout << "NO Object created, that is not normal\n";
             return(NULL);
     }
     return(NULL);
@@ -66,8 +70,16 @@ void identify(Base& p)
 int main()
 {
     Base *X;
+    std::cout << "New object creation\n";
     X = generate();
+    if(!X)
+    {
+        std::cout << "Error in the object creation\n";
+        return(1);
+    }
+    std::cout << "Testing the identify using pointer\n";
     identify(X);
+    std::cout << "Testing the identify using reference\n";
     identify(*X);
     return(0);
 }
