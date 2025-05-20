@@ -1,28 +1,31 @@
-#include "../header/Template.hpp"
+#include "../header/Array.hpp"
 
-template<typename T>
-void Add(T& A)
+int main()
 {
-    A++;
-}
+    try 
+    {
+        Array<char> B(15);
+        for(unsigned int i = 0; i < B.size(); i++)
+            B[i] = i + '0';
+        std::cout << "Array builted\n";
+        for(unsigned int i = 0; i < B.size(); i++)
+            std::cout << B[i] << "\n";
+        std::cout << " ---------------- \n";
+        Array<char> C(B);
+        std::cout << "New object created, testing his content that got copied\n";
+        for(unsigned int i = 0; i < C.size(); i++)
+            std::cout << C[i] << "\n";
+        Array<char> D(1);
+        std::cout << "Object D empty, using = to fill the content\n";
+            D = B;
+        std::cout << "Testing the content\n";
+        for(unsigned int i = 0; i < D.size(); i++)
+            std::cout << D[i] << "\n";
+    }
+	catch (const std::exception &e)
+	{
+        std::cerr << "Exception caught: " << e.what() << std::endl;
+    }
 
-template<typename T>
-void DisplayArray(T* ArrayTest, int len)
-{
-    for(int i = 0; i < len ; i++)
-        std::cout << ArrayTest[i];
-    std::cout << "\n";
-}
-
-int main( void ) 
-{
-    //int ArrayInt[] = {1, 2, 3, 4, 5};
-    char ArrayChar[] = {'A', 'B', 'C', 'D', 'E'};
-
-    std::cout << "Avant passage par iter\n";
-    DisplayArray(ArrayChar, 4);
-    iter(ArrayChar, 4, Add);
-    std::cout << "Apres passage par iter\n";
-    DisplayArray(ArrayChar, 4);
-    return (0);
+    return 0;
 }
