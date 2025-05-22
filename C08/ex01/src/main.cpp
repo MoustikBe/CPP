@@ -3,12 +3,12 @@
 
 int main()
 {
-    Span sp = Span(5);
-    sp.addNumber(6);
-    sp.addNumber(3);
-    sp.addNumber(17);
-    sp.addNumber(9);
-    sp.addNumber(11);
+    int tmp[] = {6, 3, 17, 9, 11};
+    std::vector<int> FirstVec(tmp, tmp + 5);
+
+    Span sp = Span(10);
+    
+    sp.addNumbers(FirstVec.begin(), FirstVec.end());
     std::cout << sp.shortestSpan() << std::endl;
     std::cout << sp.longestSpan() << std::endl;
     return 0;

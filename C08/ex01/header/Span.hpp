@@ -19,6 +19,13 @@ public:
     Span& operator=(const Span& other);
     ~Span();
     void addNumber(unsigned int N);
+    template<typename it>
+    void addNumbers(it start, it end) 
+    {
+        if((std::distance(start, end) + _vec.size()) >= _N) 
+            throw(std::out_of_range("Out of the range\n"));
+        _vec.insert(_vec.end(), start, end);
+    }
     unsigned int shortestSpan();
     unsigned int longestSpan();
 };
