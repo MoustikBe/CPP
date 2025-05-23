@@ -71,11 +71,14 @@ std::string founding_data(std::string ref_date)
 
 int main(int argc, char **argv)
 {
+    BitcoinExchange BitcoinData;
 
+    BitcoinData.LoadMap();
     if(argc != 2)
         return(std::cout << "Error: could not open file.\n", 1);
     
     std::string line, FirstWord, ValorStr, DataLine;
+    float Valor, ValorData, Result; 
     std::ifstream f_in(argv[1]);
     
     if(!f_in.is_open())
@@ -88,10 +91,9 @@ int main(int argc, char **argv)
         if(valid_date(FirstWord) == true)
         {
             std::getline(iss, ValorStr);
-            DataLine = founding_data(FirstWord);
-            double Valor = strtod(ValorStr.c_str(), NULL);
-            double ValorData = strtod(DataLine.substr(11, DataLine.size()).c_str(), NULL);
-            double Result = Valor * ValorData;
+            Valor = strtod(ValorStr.c_str(), NULL);
+            ValorData = BitcoinData.GetRate(FirstWord);
+            Result = Valor * ValorData;
             if(Result < 0)
                 std::cout << "Error: not a positive number.\n";
             else if(Result > 4294967295)
