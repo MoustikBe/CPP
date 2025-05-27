@@ -36,6 +36,8 @@ int main(int argc, char **argv)
 {
     std::stack<int> data;
 
+    if(argc != 2)
+        return(std::cout << "Error\n", 1);
     int j = 1;
     for(int i = 0; argv[j][i]; i++)
     {
