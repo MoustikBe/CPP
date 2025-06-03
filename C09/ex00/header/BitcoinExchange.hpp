@@ -15,7 +15,7 @@ private:
 public:
     BitcoinExchange();
     BitcoinExchange(const BitcoinExchange& other);
-//    BitcoinExchange& operator=(const BitcoinExchange& other);
+    BitcoinExchange& operator=(const BitcoinExchange& other);
     ~BitcoinExchange();
     void    LoadMap(void);
     float   GetRate(const std::string& date) const;

@@ -11,7 +11,7 @@ bool VerifValidity(std::string FirstWord)
         return(false);
     else if(day > day_in_month[month - 1])
     {
-        if(month == 2 && day == 29 && year % 4 == 0 && (year % 100 != 0) || (year % 400 == 0))
+        if((month == 2 && day == 29 && year % 4 == 0 && (year % 100 != 0)) || (year % 400 == 0))
             return(true);
         return(false);
     }
@@ -20,8 +20,6 @@ bool VerifValidity(std::string FirstWord)
 
 bool valid_date(std::string FirstWord)
 {
-    int j = 0;
-
     if(FirstWord.size() < 10)
         return(false);
     for(int i = 0; i < 10; i++)
@@ -96,7 +94,7 @@ int main(int argc, char **argv)
             Result = Valor * ValorData;
             if(Result < 0)
                 std::cout << "Error: not a positive number.\n";
-            else if(Result > 4294967295)
+            else if(Result > (float)4294967295)
                 std::cout <<  "Error: too large a number.\n";
             else 
                 std::cout << FirstWord << "=> " << Valor << " = " << Result << "\n";

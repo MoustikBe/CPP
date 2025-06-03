@@ -1,12 +1,16 @@
 #include "../header/BitcoinExchange.hpp"
 
-BitcoinExchange::BitcoinExchange() {std::cout << "Bitcoin [constructor]\n";};
+BitcoinExchange::BitcoinExchange(){};
 
-BitcoinExchange::~BitcoinExchange() {std::cout << "Bitcoin [destructor]\n";};
+BitcoinExchange::~BitcoinExchange(){};
 
-BitcoinExchange::BitcoinExchange(const BitcoinExchange& other) 
+BitcoinExchange::BitcoinExchange(const BitcoinExchange& other) : _bitcoinRates(other._bitcoinRates){};
+
+BitcoinExchange&    BitcoinExchange::operator=(const BitcoinExchange&  other)
 {
-
+    if(this != &other)
+        this->_bitcoinRates = other._bitcoinRates;
+    return(*this);
 }
 
 void BitcoinExchange::LoadMap(void)
@@ -41,10 +45,3 @@ float BitcoinExchange::GetRate(const std::string& date) const
         return(it->second);
     return(0.0f);
 }
-
-/*
-BitcoinExchange& BitcoinExchange::operator=(const BitcoinExchange& other) 
-{
-    
-}
-*/

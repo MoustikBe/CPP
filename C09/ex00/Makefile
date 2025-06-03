@@ -1,6 +1,6 @@
 NAME    = btc
 C+	    = c++
-CFLAG   = -std=c++98 -g3
+CFLAG   = -Wall -Werror -Wextra -std=c++98 -g3
 RM      = rm -rf
 OBJDIR  = obj
 SOURCES = src/main.cpp src/BitcoinExchange.cpp
