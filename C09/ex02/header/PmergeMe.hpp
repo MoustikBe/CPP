@@ -6,12 +6,16 @@
 #include <vector>
 #include <deque>
 #include <stdlib.h>
+#include <iomanip>
+#include <ctime>
 
 class PmergeMe
 {
 private:
     std::vector<int>    _Varray;
     std::deque<int>     _Darray;
+    double        _timeVector;
+    double        _timeDeque;
 public:
     PmergeMe();
     PmergeMe(const PmergeMe& other);
@@ -20,14 +24,21 @@ public:
     void    run(int argc, char **argv);
 };
 
+std::vector<int> generateJacobsthal(int n);
+std::vector<int> getJacobInsertionOrderVector(int size);
+std::deque<int> getJacobInsertionOrderDeque(int size);
+std::vector<int> VectorFordAlgo(std::vector<int> array);
+std::deque<int> DequeFordAlgo(std::deque<int> array);
+void insertOrderedVector(std::vector<int>& SmallNb, int val);
+void insertOrderedDeque(std::deque<int>& SmallNb, int val);
+void PrintTime(std::string type, int size, double time);
+
 template<typename T>
 void PrintArray(T& A, std::string msg)
 {
     std::cout << msg;
-    for(int i = 0; i < A.size() && i < 5; i++)
+    for(int i = 0; i < A.size() ; i++)
         std::cout << A[i] << " ";
-    if(A.size() > 5)
-        std::cout << "[...]";
     std::cout << std::endl;
 }
 
@@ -41,13 +52,5 @@ void CreateArray(T& A, char **argv)
             A.push_back(atoi(argv[i]));
     } 
 }
-
-std::vector<int> generateJacobsthal(int n);
-std::vector<int> getJacobInsertionOrderVector(int size);
-std::deque<int> getJacobInsertionOrderDeque(int size);
-std::vector<int> VectorFordAlgo(std::vector<int> array);
-std::deque<int> DequeFordAlgo(std::deque<int> array);
-void insertOrderedVector(std::vector<int>& SmallNb, int val);
-void insertOrderedDeque(std::deque<int>& SmallNb, int val);
 
 #endif

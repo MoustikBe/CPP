@@ -17,18 +17,6 @@ PmergeMe&	PmergeMe::operator=(const PmergeMe& other)
 
 PmergeMe::~PmergeMe() {}
 
-void    PmergeMe::run(int argc, char **argv)
-{
-    CreateArray(_Varray, argv);
-    CreateArray(_Darray, argv);
-    PrintArray(_Varray, "Before: ");
-    PrintArray(_Darray, "Before: ");
-    _Varray = VectorFordAlgo(_Varray);
-    _Darray = DequeFordAlgo(_Darray);
-    PrintArray(_Varray, "After: ");
-    PrintArray(_Darray, "After: ");
-}
-
 std::vector<int> generateJacobsthal(int n)
 {
     std::vector<int> jacob;
@@ -163,4 +151,28 @@ std::deque<int> DequeFordAlgo(std::deque<int> array)
         insertOrderedDeque(SmalNb, val);
     }
     return(SmalNb);
+}
+
+void PrintTime(std::string type, int size, double time)
+{
+    std::cout << std::fixed << std::setprecision(5);
+    std::cout << "Time to process a range of " << size << " elements with std::" << type << " : " << time << " us\n";
+}
+
+void    PmergeMe::run(int argc, char **argv)
+{
+    clock_t TimeStart, TimeEnd;
+    CreateArray(_Varray, argv);
+    CreateArray(_Darray, argv);
+    PrintArray(_Darray, "Before: ");
+    TimeStart = clock();
+    _Varray = VectorFordAlgo(_Varray);
+    _timeVector = clock() - TimeStart;
+    TimeStart = clock();
+    _Darray = DequeFordAlgo(_Darray);
+    _timeDeque = clock() - TimeStart;
+    PrintArray(_Varray, "After: ");
+    PrintArray(_Darray, "After: ");
+    PrintTime("vector", _Varray.size(), _timeVector / CLOCKS_PER_SEC);
+    PrintTime("deque", _Darray.size(), _timeDeque / CLOCKS_PER_SEC);
 }
