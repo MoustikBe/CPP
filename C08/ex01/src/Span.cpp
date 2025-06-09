@@ -51,7 +51,7 @@ unsigned int Span::shortestSpan()
 
     std::vector<unsigned int> copy_vec(_vec);
     std::sort(copy_vec.begin(), copy_vec.end());
-    for(int i = 1; i < copy_vec.size(); i++)
+    for(size_t i = 1; i < copy_vec.size(); i++)
     {
         if(copy_vec[i] - copy_vec[i - 1] < ShortestVal)
             ShortestVal = copy_vec[i] - copy_vec[i - 1];

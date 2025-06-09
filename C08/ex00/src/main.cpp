@@ -2,7 +2,7 @@
 
 void DisplayVecContent(const std::vector<int>& VectorTest)
 {
-    for(int i = 0; i < VectorTest.size(); i++)
+    for(size_t i = 0; i < VectorTest.size(); i++)
     {
         std::cout << VectorTest[i];
         std::cout << " ";
