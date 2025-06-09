@@ -21,7 +21,7 @@ public:
     PmergeMe(const PmergeMe& other);
     PmergeMe& operator=(const PmergeMe& other);
     ~PmergeMe();
-    void    run(int argc, char **argv);
+    void    run(char **argv);
 };
 
 std::vector<int> generateJacobsthal(int n);
@@ -37,7 +37,7 @@ template<typename T>
 void PrintArray(T& A, std::string msg)
 {
     std::cout << msg;
-    for(int i = 0; i < A.size() ; i++)
+    for(size_t i = 0; i < A.size() ; i++)
         std::cout << A[i] << " ";
     std::cout << std::endl;
 }

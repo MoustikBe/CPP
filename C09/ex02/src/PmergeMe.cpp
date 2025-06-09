@@ -159,9 +159,9 @@ void PrintTime(std::string type, int size, double time)
     std::cout << "Time to process a range of " << size << " elements with std::" << type << " : " << time << " us\n";
 }
 
-void    PmergeMe::run(int argc, char **argv)
+void    PmergeMe::run(char **argv)
 {
-    clock_t TimeStart, TimeEnd;
+    clock_t TimeStart;
     CreateArray(_Varray, argv);
     CreateArray(_Darray, argv);
     PrintArray(_Darray, "Before: ");

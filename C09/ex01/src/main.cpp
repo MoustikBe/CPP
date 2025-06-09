@@ -10,7 +10,7 @@ int main(int argc, char **argv)
     for(int i = 0; argv[j][i]; i++)
     {
         if(argv[j][i] == '-' || argv[j][i] == '+' || argv[j][i] == '*' || argv[j][i] == '/')
-            operation_scenario(data, argv[j][i], i);
+            operation_scenario(data, argv[j][i]);
         else if(isdigit(argv[j][i]))
             data.push(argv[j][i] - '0');
     }

@@ -1,7 +1,7 @@
 
 #include "../header/RNP.hpp"
 
-void  operation_scenario(std::stack<int>& data, char op, int i)
+void  operation_scenario(std::stack<int>& data, char op)
 {   
     int result, A, B;
     if(data.size() < 2)
