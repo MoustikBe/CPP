@@ -94,8 +94,10 @@ int main(int argc, char **argv)
             Result = Valor * ValorData;
             if(Result < 0)
                 std::cout << "Error: not a positive number.\n";
-            else if(Result > (float)4294967295)
+            else if(Valor > 1000)
                 std::cout <<  "Error: too large a number.\n";
+            else if(Valor < 0)
+                std::cout <<  "Error: too litle a number.\n";
             else 
                 std::cout << FirstWord << "=> " << Valor << " = " << Result << "\n";
         }
